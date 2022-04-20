@@ -10,6 +10,7 @@ module.exports = {
       },
       home_team: {
         allowNull: false,
+        type: Sequelize.INTEGER,
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
         references: {
@@ -22,6 +23,7 @@ module.exports = {
       },
       away_team: {
         allowNull: false,
+        type: Sequelize.INTEGER,
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
         references: {
@@ -36,14 +38,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.BOOLEAN,
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
     });
   },
   down: async (queryInterface, Sequelize) => {
