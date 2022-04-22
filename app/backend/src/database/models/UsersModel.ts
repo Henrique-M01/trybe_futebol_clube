@@ -1,4 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
+import IDataValues from '../../interfaces/IDataValues';
 import db from '.';
 
 class Users extends Model {
@@ -11,6 +12,8 @@ class Users extends Model {
   public email: string;
 
   public password: string;
+
+  public dataValues: IDataValues;
 }
 
 Users.init({
