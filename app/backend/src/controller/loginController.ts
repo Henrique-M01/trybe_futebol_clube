@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import loginService from '../services/loginService';
 
-export default async function login(req: Request, res: Response, _next: NextFunction) {
+export default async function login(req: Request, res: Response, next: NextFunction) {
   try {
     const { email, password } = req.body;
 
@@ -11,6 +11,6 @@ export default async function login(req: Request, res: Response, _next: NextFunc
 
     return res.status(200).json(validate);
   } catch (e) {
-    console.log(e);
+    next(e);
   }
 }
