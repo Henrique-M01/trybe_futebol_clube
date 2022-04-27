@@ -8,4 +8,12 @@ async function getAll() {
   return allTeams;
 }
 
-export default { getAll };
+async function getById(id: string) {
+  const team = await Teams.findByPk(id);
+
+  if (!team) return false;
+
+  return team;
+}
+
+export default { getAll, getById };

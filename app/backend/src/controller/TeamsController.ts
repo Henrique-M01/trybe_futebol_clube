@@ -13,4 +13,18 @@ async function getAllTeams(_req: Request, res: Response, next: NextFunction) {
   }
 }
 
-export default { getAllTeams };
+async function getById(req: Request, res: Response, next: NextFunction) {
+  try {
+    const { id } = req.params;
+
+    const teamById = await teamsService.getById(id);
+
+    if (!teamById) return res.status(404).json({ message: 'Team not found' });
+
+    return res.status(200).json(teamById);
+  } catch (e) {
+    next(e);
+  }
+}
+
+export default { getAllTeams, getById };
