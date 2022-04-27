@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import validateLogin from '../middlewares/validateLogin';
-import { login, validateLogin as validLogin } from '../controller/loginController';
+import { login, validateLogin as validLogin } from '../controller/LoginController';
 import authMiddleware from '../middlewares/authMiddleware';
 
 const loginRouter = Router();

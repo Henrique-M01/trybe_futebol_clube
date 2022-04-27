@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import RequestWithToken from '../interfaces/IRequest';
-import loginService from '../services/loginService';
+import loginService from '../services/LoginService';
 
 async function login(req: Request, res: Response, next: NextFunction) {
   try {
