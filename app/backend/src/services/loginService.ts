@@ -16,7 +16,7 @@ async function validateLogin(email: string, password: string) {
 
   delete userExist.dataValues.password;
 
-  const token = jwtGenerator({ email });
+  const token = jwtGenerator(userExist.dataValues.role);
 
   return { user: userExist.dataValues, token };
 }
