@@ -37,4 +37,17 @@ async function updateMatchesFinish(id: string) {
   return update;
 }
 
-export default { getAll, createMatch, updateMatchesFinish };
+async function updateInProgress(id: string, homeTeamGoals: number, awayTeamGoals: number) {
+  // const findMatch = await Matches.findByPk(id);
+
+  // if (!findMatch) return false;
+
+  const update = await Matches.update({ homeTeamGoals, awayTeamGoals }, { where: { id } });
+  console.log(update);
+
+  if (!update) return false;
+
+  return update;
+}
+
+export default { getAll, createMatch, updateMatchesFinish, updateInProgress };

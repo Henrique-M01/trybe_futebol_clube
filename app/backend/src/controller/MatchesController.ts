@@ -44,4 +44,19 @@ async function updateMatchesFinish(req: Request, res: Response, next: NextFuncti
   }
 }
 
-export default { getAll, createMatch, updateMatchesFinish };
+async function updateInProgress(req: Request, res: Response, next: NextFunction) {
+  try {
+    const { id } = req.params;
+    const { homeTeamGoals, awayTeamGoals } = req.body;
+
+    const update = await MatchesService.updateInProgress(id, homeTeamGoals, awayTeamGoals);
+
+    if (!update) return res.status(400).json({ message: 'Update status in progress failed' });
+
+    return res.status(200).json({ message: 'Successfully updated' });
+  } catch (e) {
+    next(e);
+  }
+}
+
+export default { getAll, createMatch, updateMatchesFinish, updateInProgress };
