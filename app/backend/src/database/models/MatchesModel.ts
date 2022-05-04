@@ -1,4 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
+import IDataValues from '../../interfaces/IDataValues';
 import db from '.';
 import Teams from './TeamsModel';
 
@@ -14,6 +15,8 @@ class Matches extends Model {
   public awayTeamGoals!: number;
 
   public inProgress!: boolean;
+
+  public dataValues?: IDataValues;
 }
 
 Matches.init({

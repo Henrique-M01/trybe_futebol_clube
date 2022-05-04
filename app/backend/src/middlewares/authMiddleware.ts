@@ -12,7 +12,6 @@ export default async (req: RequestWithToken, res: Response, next: NextFunction) 
     if (!token) return res.status(401).json({ message: 'Token not found' });
 
     const decoded = jwt.verify(token, SECRET);
-    console.log(decoded);
 
     req.tokenData = decoded;
 
