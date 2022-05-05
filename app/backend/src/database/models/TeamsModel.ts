@@ -1,10 +1,14 @@
 import { DataTypes, Model } from 'sequelize';
+import { IDataValuesTeams } from '../../interfaces/IDataValues';
+
 import db from '.';
 
 class Teams extends Model {
   public id: number;
 
   public teamName: number;
+
+  public dataValues: IDataValuesTeams;
 }
 
 Teams.init({

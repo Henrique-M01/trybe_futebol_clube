@@ -8,4 +8,13 @@ export default interface IDataValues {
 
 export interface IDataValuesMatches {
   homeTeamGoals: number;
+  awayTeamGoals: number;
+  homeTeam: number;
+  awayTeam: number;
+  inProgress: boolean;
+}
+
+export interface IDataValuesTeams {
+  teamName: string;
+  id: number;
 }

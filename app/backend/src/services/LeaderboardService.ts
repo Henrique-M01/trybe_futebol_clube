@@ -9,11 +9,12 @@ async function leaderboardHome() {
   const teamsHome: TeamResults[] = [];
   allTeams.forEach((team) => {
     const resultMatches = allMatches
-      .filter((match) => (match.inProgress === false && match.homeTeam === team.id))
+      .filter((match) => (match.dataValues.homeTeam === team.dataValues.id
+          && match.dataValues.inProgress === false))
       .map((match) => ({
-        goalsFavor: match.dataValues.homeTeamGoals, goalsOwn: match.awayTeamGoals }));
+        goalsFavor: match.dataValues.homeTeamGoals, goalsOwn: match.dataValues.awayTeamGoals }));
     const newTeamResult = new TeamResults({
-      teamName: team.teamName.toString(), matches: resultMatches });
+      teamName: team.dataValues.teamName, matches: resultMatches });
     teamsHome.push(newTeamResult);
   });
 

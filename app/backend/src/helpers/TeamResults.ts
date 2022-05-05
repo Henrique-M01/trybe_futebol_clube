@@ -37,8 +37,8 @@ export default class TeamResults {
 
   private static calculatePoints(matches: IMatch[]): number {
     return matches.reduce((totalPoints, { goalsFavor, goalsOwn }) => {
-      if (goalsFavor === goalsOwn) return totalPoints + 3;
-      if (goalsFavor > goalsOwn) return totalPoints + 1;
+      if (goalsFavor === goalsOwn) return totalPoints + 1;
+      if (goalsFavor > goalsOwn) return totalPoints + 3;
       return totalPoints;
     }, 0);
   }
