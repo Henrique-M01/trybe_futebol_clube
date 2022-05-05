@@ -5,3 +5,7 @@ export default interface IDataValues {
   email: string;
   password?: string,
 }
+
+export interface IDataValuesMatches {
+  homeTeamGoals: number;
+}

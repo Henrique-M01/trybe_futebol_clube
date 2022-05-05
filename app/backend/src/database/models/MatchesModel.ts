@@ -1,5 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
-import IDataValues from '../../interfaces/IDataValues';
+import { IDataValuesMatches } from '../../interfaces/IDataValues';
 import db from '.';
 import Teams from './TeamsModel';
 
@@ -16,7 +16,7 @@ class Matches extends Model {
 
   public inProgress!: boolean;
 
-  public dataValues?: IDataValues;
+  public dataValues: IDataValuesMatches;
 }
 
 Matches.init({
