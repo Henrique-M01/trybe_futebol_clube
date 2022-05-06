@@ -11,4 +11,24 @@ async function leaderboardHome(_req: Request, res: Response, next: NextFunction)
   }
 }
 
-export default { leaderboardHome };
+async function leaderboardAway(_req: Request, res: Response, next: NextFunction) {
+  try {
+    const teamAway = await LeaderboardService.leaderboardAway();
+
+    return res.status(200).json(teamAway);
+  } catch (e) {
+    next(e);
+  }
+}
+
+async function leaderboardAll(_req: Request, res: Response, next: NextFunction) {
+  try {
+    const allMatches = await LeaderboardService.leaderboardAll();
+
+    return res.status(200).json(allMatches);
+  } catch (e) {
+    next(e);
+  }
+}
+
+export default { leaderboardHome, leaderboardAway, leaderboardAll };
