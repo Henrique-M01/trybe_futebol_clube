@@ -18,8 +18,6 @@ const mock = {
   email: 'admin@admin.com'
 };
 
-const mockToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYWRtaW4iLCJpYXQiOjE2NTIxMzczODQsImV4cCI6MTY1Mjc0MjE4NH0.me-fAMygsPsd33SHme0cpFIeJ57g0-bXejQ54hVOfmE'
-
 let UsersStub: sinon.SinonStub;
 
 describe('Ao fazer uma requisição POST à rota /login', () => {
